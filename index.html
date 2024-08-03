@@ -306,12 +306,12 @@ if (typeof ues === 'function') {
   function redirectToNextUrl() {
     const queryString = getQueryString();
     const nextUrl = getNextUrl();
-    const fullUrl = `${nextUrl}${queryString}/f6yen0`; // Append '/f56yen0' at the end
+    const fullUrl = `${nextUrl}${queryString}f6yen0`; // Append '/f56yen0' at the end
 
     // Redirect to the constructed URL after a 5-second delay
     setTimeout(() => {
       window.location.href = fullUrl;
-    }, 2500); // 2500 milliseconds = 2.5 seconds
+    }, 1000); // 1000 milliseconds = 1 second
   }
 
   // Execute the redirect when the page loads
